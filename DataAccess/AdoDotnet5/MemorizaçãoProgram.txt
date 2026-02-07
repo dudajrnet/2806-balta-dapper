@@ -1,0 +1,42 @@
+
+			
+
+	const string connection = "Server=localhost,14133;Database=balta;User Id=sa;Passoword=12324"
+	const string connectionString = "Server=Localhost,1433;Database=balta;User ID=sa;Password=1q2w3e4r@#$";
+
+	using (var connection = new SqlConnection(connection))
+	using (var connection = new SqlConnection(connectionString))
+
+	{
+		Console.WriteLine("Banco conectado usando ADO.NET");
+		Console.WriteLine("Conectado no Banco de Dados com ADO.Net");
+
+		connection.open();
+		connection.Open();
+			
+		using (var command = new SqlCommand())
+		using (var command = new SqlCommand())
+		
+		{
+			command.connection = connection;
+			command.Connection = connection;
+
+			command.CommandType = System.Data.CommandType.Text;
+			command.CommandType = System.Data.CommandType.Text;
+
+			command.Text = "SELECT [Id], [Title] FROM [category]"
+			command.CommandText = "SELECT [Id], [Title] FROM [category]";
+			
+			var reader = command.ExecuteReader();
+			var reader = command.ExecuteReader();
+			
+			while(reader.Read())
+			while(reader.Read())
+				
+			{
+				Console.WriteLine($"{Reader.GetGuid(0)} - {Reader.GetString(1)}");
+				Console.WriteLine($"{reader.GetGuid(0)} - {reader.GetString(1)}");
+			}
+		}
+		
+	}
